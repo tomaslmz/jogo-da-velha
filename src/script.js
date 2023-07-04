@@ -5,6 +5,7 @@ var contador = 0;
 
 blocos[0].addEventListener("click", () => {
     if(blocos[0].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[0].innerHTML = "X";
             vez = false;
@@ -19,6 +20,7 @@ blocos[0].addEventListener("click", () => {
 
 blocos[1].addEventListener("click", () => {
     if(blocos[1].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[1].innerHTML = "X";
             vez = false;
@@ -33,6 +35,7 @@ blocos[1].addEventListener("click", () => {
 
 blocos[2].addEventListener("click", () => {
     if(blocos[2].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[2].innerHTML = "X";
             vez = false;
@@ -47,6 +50,7 @@ blocos[2].addEventListener("click", () => {
 
 blocos[3].addEventListener("click", () => {
     if(blocos[3].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[3].innerHTML = "X";
             vez = false;
@@ -61,6 +65,7 @@ blocos[3].addEventListener("click", () => {
 
 blocos[4].addEventListener("click", () => {
     if(blocos[4].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[4].innerHTML = "X";
             vez = false;
@@ -75,6 +80,7 @@ blocos[4].addEventListener("click", () => {
 
 blocos[5].addEventListener("click", () => {
     if(blocos[5].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[5].innerHTML = "X";
             vez = false;
@@ -89,6 +95,7 @@ blocos[5].addEventListener("click", () => {
 
 blocos[6].addEventListener("click", () => {
     if(blocos[6].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[6].innerHTML = "X";
             vez = false;
@@ -103,6 +110,7 @@ blocos[6].addEventListener("click", () => {
 
 blocos[7].addEventListener("click", () => {
     if(blocos[7].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[7].innerHTML = "X";
             vez = false;
@@ -117,6 +125,7 @@ blocos[7].addEventListener("click", () => {
 
 blocos[8].addEventListener("click", () => {
     if(blocos[8].innerHTML == '' && isGameRunning) {
+        contador++;
         if(vez) {
             blocos[8].innerHTML = "X";
             vez = false;
@@ -130,7 +139,6 @@ blocos[8].addEventListener("click", () => {
 });
 
 document.querySelector("main").addEventListener("click", () => {
-    contador++;
     if(((blocos[0].innerHTML == 'X' && blocos[1].innerHTML == 'X' && blocos[2].innerHTML == 'X') || (blocos[3].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[5].innerHTML == 'X') || (blocos[6].innerHTML == 'X' && blocos[7].innerHTML == 'X' && blocos[8].innerHTML == 'X') || (blocos[0].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[8].innerHTML == 'X') || (blocos[2].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[6].innerHTML == 'X') || (blocos[1].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[7].innerHTML == 'X') || (blocos[0].innerHTML == 'X' && blocos[3].innerHTML == 'X' && blocos[6].innerHTML == 'X') || (blocos[2].innerHTML == 'X') && blocos[5].innerHTML == 'X' && blocos[8].innerHTML == 'X') && isGameRunning) {
         document.querySelector("h1").innerHTML = "o X ganhou!";
         isGameRunning = false;
