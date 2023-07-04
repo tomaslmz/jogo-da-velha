@@ -1,6 +1,7 @@
 const blocos = [document.getElementById("bloco1"), document.getElementById("bloco2"), document.getElementById("bloco3"), document.getElementById("bloco4"), document.getElementById("bloco5"), document.getElementById("bloco6"), document.getElementById("bloco7"), document.getElementById("bloco8"), document.getElementById("bloco9")];
 var vez = true;
 var isGameRunning = true;
+var contador = 0;
 
 blocos[0].addEventListener("click", () => {
     if(blocos[0].innerHTML == '' && isGameRunning) {
@@ -129,17 +130,38 @@ blocos[8].addEventListener("click", () => {
 });
 
 document.querySelector("main").addEventListener("click", () => {
-    if(((blocos[0].innerHTML == 'X' && blocos[1].innerHTML == 'X' && blocos[2].innerHTML == 'X') || (blocos[3].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[5].innerHTML == 'X') || (blocos[6].innerHTML == 'X' && blocos[7].innerHTML == 'X' && blocos[8].innerHTML == 'X') || (blocos[0].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[8].innerHTML == 'X') || (blocos[2].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[6].innerHTML == 'X')) && isGameRunning) {
-        alert("X ganhou!");
+    contador++;
+    if(((blocos[0].innerHTML == 'X' && blocos[1].innerHTML == 'X' && blocos[2].innerHTML == 'X') || (blocos[3].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[5].innerHTML == 'X') || (blocos[6].innerHTML == 'X' && blocos[7].innerHTML == 'X' && blocos[8].innerHTML == 'X') || (blocos[0].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[8].innerHTML == 'X') || (blocos[2].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[6].innerHTML == 'X') || (blocos[1].innerHTML == 'X' && blocos[4].innerHTML == 'X' && blocos[7].innerHTML == 'X') || (blocos[0].innerHTML == 'X' && blocos[3].innerHTML == 'X' && blocos[6].innerHTML == 'X') || (blocos[2].innerHTML == 'X') && blocos[5].innerHTML == 'X' && blocos[8].innerHTML == 'X') && isGameRunning) {
+        document.querySelector("h1").innerHTML = "o X ganhou!";
         isGameRunning = false;
-    } else if(((blocos[0].innerHTML == 'O' && blocos[1].innerHTML == 'O' && blocos[2].innerHTML == 'O') || (blocos[3].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[5].innerHTML == 'O') || (blocos[6].innerHTML == 'O' && blocos[7].innerHTML == 'O' && blocos[8].innerHTML == 'O') || (blocos[0].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[8].innerHTML == 'O') || (blocos[2].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[6].innerHTML == 'O')) && isGameRunning) {
-        alert("O ganhou!");
+    } else if(((blocos[0].innerHTML == 'O' && blocos[1].innerHTML == 'O' && blocos[2].innerHTML == 'O') || (blocos[3].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[5].innerHTML == 'O') || (blocos[6].innerHTML == 'O' && blocos[7].innerHTML == 'O' && blocos[8].innerHTML == 'O') || (blocos[0].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[8].innerHTML == 'O') || (blocos[2].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[6].innerHTML == 'O') || (blocos[1].innerHTML == 'O' && blocos[4].innerHTML == 'O' && blocos[7].innerHTML == 'O') || (blocos[0].innerHTML == 'O' && blocos[3].innerHTML == 'O' && blocos[6].innerHTML == 'O') || (blocos[2].innerHTML == 'O') && blocos[5].innerHTML == 'O' && blocos[8].innerHTML == 'O') && isGameRunning) {
+        document.querySelector("h1").innerHTML = "o O ganhou!";
         isGameRunning = false;
+    }
+
+    if(contador >= 9) {
+        for(let i = 0; i<9; i++) {
+            blocos[i].style.cursor = 'default';
+        }
+        isGameRunning = false;
+        document.querySelector("h1").innerHTML = "Empate!"
     }
 
     if(!isGameRunning) {
         for(let i = 0; i<9; i++) {
             blocos[i].style.cursor = 'default';
         }
+        contador = 0;
+        document.querySelector("aside").style.display = "flex";
     }
 });
+
+const reiniciar = () => {
+    for(let i = 0; i<9; i++) {
+        blocos[i].style.cursor = "pointer";
+        blocos[i].innerHTML = '';
+    }
+    isGameRunning = true;
+    vez = true;
+    document.querySelector("aside").style.display = "none";
+}

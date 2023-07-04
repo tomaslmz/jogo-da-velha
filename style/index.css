@@ -2,14 +2,16 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 body {
     width: 100vw;
     height: 100vh;
-
+    background-color: rgb(17, 17, 17);
     display: flex;
     justify-content: center;
+    color: white;
     align-items: center;
 }
 
@@ -24,26 +26,55 @@ main {
 
 .bloco {
     display: flex;
-    font-family: 'IBM Plex Sans', sans-serif;
     justify-content: center;
     align-items: center;
     font-size: 5em;
     cursor: pointer;
 }
 
+button {
+    width: 80px;
+    height: 40px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
 
 .bloco:nth-child(1), .bloco:nth-child(4), .bloco:nth-child(7) {
-    border-right: red 3px solid;
+    border-right: white 3px solid;
 }
 
 .bloco:nth-child(3), .bloco:nth-child(6), .bloco:nth-child(9) {
-    border-left: red 3px solid;
+    border-left: white 3px solid;
 }
 
 .bloco:nth-child(1), .bloco:nth-child(2), .bloco:nth-child(3) {
-    border-bottom: red 3px solid;
+    border-bottom: white 3px solid;
 }
 
 .bloco:nth-child(7), .bloco:nth-child(8), .bloco:nth-child(9) {
-    border-top: red 3px solid;
+    border-top: white 3px solid;
+}
+
+.msg {
+    color: black;
+    position: fixed;
+    top: 1vh;
+    width: 400px;
+    height: 200px;
+    background-color: white;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 20px;
 }
