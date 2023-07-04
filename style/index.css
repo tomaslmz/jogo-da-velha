@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 500px;
+    height: 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.bloco {
+    display: flex;
+    font-family: 'IBM Plex Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    cursor: pointer;
+}
+
+
+.bloco:nth-child(1), .bloco:nth-child(4), .bloco:nth-child(7) {
+    border-right: red 3px solid;
+}
+
+.bloco:nth-child(3), .bloco:nth-child(6), .bloco:nth-child(9) {
+    border-left: red 3px solid;
+}
+
+.bloco:nth-child(1), .bloco:nth-child(2), .bloco:nth-child(3) {
+    border-bottom: red 3px solid;
+}
+
+.bloco:nth-child(7), .bloco:nth-child(8), .bloco:nth-child(9) {
+    border-top: red 3px solid;
+}
